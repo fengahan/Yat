@@ -242,7 +242,7 @@ class AuthHelper
     public static function invalidate()
     {
         if (AdminConfigsComponent::cache() !== null) {
-            TagDependency::invalidate(AdminConfigsComponent::cache(), Configs::CACHE_TAG);
+            TagDependency::invalidate(AdminConfigsComponent::cache(), AdminConfigsComponent::CACHE_TAG);
         }
     }
 }

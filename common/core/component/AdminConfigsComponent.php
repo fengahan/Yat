@@ -43,7 +43,7 @@ class AdminConfigsComponent extends yii\base\BaseObject
     {
         foreach (self::$_classes as $key => $class) {
             try {
-                $this->{$key} = empty($this->{$key}) ? null : Instance::ensure($this->{$key}, $class);
+                $this->{$key} = empty($key) ? null : Instance::ensure($key, $class);
             } catch (\Exception $exc) {
                 $this->{$key} = null;
                 Yii::error($exc->getMessage());
