@@ -32,7 +32,7 @@ AppAsset::register($this);
     <!-- 顶部 -->
     <div class="layui-header header">
         <div class="layui-main">
-            <a href="/index.html" class="logo" style="font-size:16px;font-weight:600;"><?=Yii::$app->name?></a>
+            <a href="#" class="logo" style="font-size:16px;font-weight:600;"><?=Yii::$app->name?></a>
             <!-- 显示/隐藏菜单 -->
             <a href="javascript:;" class="iconfont hideMenu icon-menu1"></a>
             <!-- 搜索 -->

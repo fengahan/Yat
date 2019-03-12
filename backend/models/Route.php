@@ -154,13 +154,13 @@ class Route extends BaseActive
         }
         $key = [__METHOD__, $module->getUniqueId()];
         $cache = AdminConfigsComponent::instance()->cache;
-        $cache=null;
+
         if ($cache === null || ($result = $cache->get($key)) === false) {
             $result = [];
             $this->getRouteRecrusive($module, $result);
             if ($cache !== null) {
                 $cache->set($key, $result, AdminConfigsComponent::instance()->cacheDuration, new TagDependency([
-                    'tags' => self::CACHE_TAG,
+                    'tags' => AdminConfigsComponent::CACHE_TAG,
                 ]));
             }
         }
@@ -303,16 +303,6 @@ class Route extends BaseActive
             Yii::error($exc->getMessage(), __METHOD__);
         }
         Yii::endProfile($token, __METHOD__);
-    }
-
-    /**
-     * @throws \yii\base\InvalidConfigException
-     */
-    public static function invalidate()
-    {
-        if (AdminConfigsComponent::cache() !== null) {
-            TagDependency::invalidate(AdminConfigsComponent::cache(), self::CACHE_TAG);
-        }
     }
 
     /**

@@ -388,7 +388,7 @@ function showNotice() {
         id: 'LAY_layuipro',
         btn: ['我知道了'],
         moveType: 1,
-        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>基于layui开发的一套纯前端后台框架。致力于简洁代码和拿来即用。欢迎在<a href="https://gitee.com/cluyun/LayuiCMSluyun" target="_blank">码云</a>Issues中提建议和bug。</p><p>非常感谢马哥的<a href="https://gitee.com/layuicms/layuicms" target="_blank">layuicms</a>，我的成长从他那里开始。</p></div>',
+        content: '<div style="padding:15px 20px; text-align:justify; line-height: 22px; text-indent:2em;border-bottom:1px solid #e2e2e2;"><p>基于Yii2+layui开发的一套后台框架。致力于简洁代码和拿来即用。欢迎在<a href="https://github.com/fengahan/Yat" target="_blank">Github</a>Issues中提建议和bug。</p><p>非常感谢马哥的<a href="https://gitee.com/layuicms/layuicms" target="_blank">layuicms</a>，我的成长从他那里开始。</p></div>',
         success: function (layero) {
             var btn = layero.find('.layui-layer-btn');
             btn.css('text-align', 'center');

@@ -12,6 +12,7 @@ namespace backend\controllers;
 
 use backend\models\Route;
 use common\base\BaseController;
+use common\core\component\AdminConfigsComponent;
 use yii\data\ArrayDataProvider;
 use yii;
 use yii\helpers\ArrayHelper;
@@ -47,7 +48,6 @@ class RouteController extends BaseController
     {
 
         \Yii::$app->response->format=Response::FORMAT_JSON;
-        $req=Yii::$app->request;
         $routeModel=new Route();
         $routes= $routeModel->getAssignedRoutes();
         $provider = new ArrayDataProvider([
@@ -78,14 +78,15 @@ class RouteController extends BaseController
      */
     public function actionAvailableList()
     {
+
         \Yii::$app->response->format=Response::FORMAT_JSON;
         $routeModel=new Route();
-        $avaliable_routes=$routeModel->getAvaliableRoutes();
+        $available_routes=$routeModel->getAvaliableRoutes();
         $assigned_routes=$routeModel->getAssignedRoutes();
-        $diff=array_diff(array_keys($avaliable_routes),array_keys($assigned_routes));
+        $diff=array_diff(array_keys($available_routes),array_keys($assigned_routes));
         $routes=[];
         foreach ($diff as $key=>$value){
-            $routes[]=$avaliable_routes[$value];
+            $routes[]=$available_routes[$value];
         }
         $provider = new ArrayDataProvider([
             'allModels' =>$routes,
