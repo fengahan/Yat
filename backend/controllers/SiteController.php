@@ -24,20 +24,6 @@ class SiteController extends BaseController
     public function behaviors()
     {
         return [
-            'access' => [
-                'class' => AccessControl::class,
-                'rules' => [
-                    [
-                        'actions' => ['login', 'error','captcha','nav','menu','header-nav','left-nav'],
-                        'allow' => true,
-                    ],
-                    [
-                        'actions' => ['logout', 'index','main'],
-                        'allow' => true,
-                        'roles' => ['@'],
-                    ],
-                ],
-            ],
             'verbs' => [
                 'class' => VerbFilter::class,
                 'actions' => [
@@ -141,7 +127,7 @@ class SiteController extends BaseController
         Yii::$app->response->format=Response::FORMAT_JSON;
         $data=$this->getMenuList();
 
-        return ['code'=>1,'data'=>$data,'msg'=>"获取成功"];
+        return $this->FormatArray(self::REQUEST_SUCCESS,"获取成功",$data);
     }
     protected function getMenuList(){
 

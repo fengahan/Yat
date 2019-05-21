@@ -122,7 +122,7 @@ class BizRule extends BaseModel
 
     /**
      * Find model by id
-     * @param type $id
+     * @param int $id
      * @return null|static
      */
     public static function find($id)

@@ -45,8 +45,9 @@ return [
             'errorAction' => 'site/error',
         ],
         'formatter' => [
-             'dateFormat' => 'dd.MM.yyyy',
-             'nullDisplay'=>0,
+            'dateFormat' => 'yyyy-MM-dd',
+            'datetimeFormat' => 'yyyy-MM-dd HH:mm:ss',
+            'nullDisplay'=>0,
          ],
         /*
 

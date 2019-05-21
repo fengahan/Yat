@@ -137,7 +137,7 @@ layui.define(['element', 'layer', 'jquery'], function (drdrdr) {
                 data = JSON.parse(data);
             }
 
-            if (data.code == 1) {
+            if (data.status == 1) {
 
                 //显示左侧菜单
                 if ($(".navBar").html() == '') {
@@ -152,14 +152,19 @@ layui.define(['element', 'layer', 'jquery'], function (drdrdr) {
                     }
                 }
             } else {
-                layer.msg((data.msg || '加载错误'), { anim: 10, icon: 0 });
+
+                layer.msg((data.msg || '加载错误'), { anim: 10, icon:iconIndex });
             }
 
         }
 
         ajaxSettings.error = function (ex) {
 
-            console.warn(ex.responseText);
+            var e=JSON.parse(ex.responseText)
+            if (e.status!==1){
+                layer.msg(e.msg, {icon: 5})
+            }
+
 
         }
 
