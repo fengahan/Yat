@@ -24,7 +24,7 @@ layui.use(['form','layer','upload','formSelects'],function(){
                 $.post(adminUserCreateUrl,{
                     username:data.field.username,
                     nickname:data.field.nickname,
-                    head_img:data.field.head_src,
+                    head_img:data.field.head_img,
                     email:data.field.email,
                     items:items,
                     password:data.field.password,
