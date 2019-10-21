@@ -54,6 +54,8 @@ class BaseController extends Controller
                     }
                 }
             }else{//验证权限
+                array_push($ing_list,'site/left-nav');
+
                 if (in_array($route,$ing_list)){
                     return true;
                 }
