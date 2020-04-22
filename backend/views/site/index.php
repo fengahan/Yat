@@ -54,9 +54,6 @@ AppAsset::register($this);
                 <li class="layui-nav-item" mobile>
                     <a href="javascript:;" class="signOut"> <i class="iconfont icon-loginout"></i> 退出</a>
                 </li>
-                <li class="layui-nav-item lockcms" pc>
-                    <a href="javascript:;"><i class="iconfont icon-lock1"></i><cite>锁屏</cite></a>
-                </li>
                 <li class="layui-nav-item" pc>
                     <a href="javascript:;">
                         <img src="<?=Yii::$app->user->identity->head_img?>" class="layui-circle userIconAs"
