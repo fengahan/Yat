@@ -25,14 +25,14 @@ CREATE TABLE `yy_admin_user` (
   `nickname` varchar(127) NOT NULL,
   `auth_key` varchar(32) NOT NULL COMMENT '自动登录key',
   `password_hash` varchar(255) NOT NULL COMMENT '加密密码',
-  `head_img` varchar(255) NOT NULL,
+  `head_img` varchar(255) NOT NULL DEFAULT '',
   `password_reset_token` varchar(255) DEFAULT NULL COMMENT '重置密码token',
   `email` varchar(255) NOT NULL COMMENT '邮箱',
   `role` smallint(6) NOT NULL DEFAULT '30' COMMENT '角色等级10 超级30 为一般',
   `status` smallint(6) NOT NULL DEFAULT '10' COMMENT '状态',
   `created_at` int(11) NOT NULL COMMENT '创建时间',
   `updated_at` int(11) NOT NULL COMMENT '更新时间',
-  `last_login_at` int(11) NOT NULL,
+  `last_login_at` int(11) NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='用户表';
 
