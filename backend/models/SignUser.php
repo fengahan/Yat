@@ -26,10 +26,10 @@ class SignUser extends AdminUser
 
         return [
 
-            [['username','email','nickname'],'required'],
-
-            ['password','required','on'=>self::OP_INSERT],//新增管理员必须输入密码
-            ['status','required','on'=>self::OP_UPDATE],//新增管理员必须输入密码
+            [['username','email','nickname','head_img'],'required'],
+            [['username','email'], 'unique','message'=>'邮箱或者用户名被占用'],
+            [['password','head_img'],'required','on'=>self::OP_INSERT],//新增管理员必须输入密码
+            ['status','required','on'=>self::OP_UPDATE],
             ['password','string','length'=>[8,14]],
             ['password','filter','filter'=>function($value){
                 if ($this->password !=null){
