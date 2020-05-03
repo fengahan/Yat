@@ -71,6 +71,7 @@ class AdminUserController extends BaseController
         if ($req->isPost){
             Yii::$app->response->format=Response::FORMAT_JSON;
             $signUser=new SignUser();
+            $signUser->last_login_at=time();
             $items=$req->post('items',[]);
             if ($signUser->load($req->post(),'') && $signUser->save()){
                 $assignModel=$this->findAssignModel($signUser->id);
